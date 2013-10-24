@@ -1,3 +1,7 @@
+#Kyler Jeffrey
+
+#Just some comments regarding your code. What it does, stuff like this to generally portray a general understanding of the application, and its code!
+
 # Anim1e1.py
 #In Python code it looks like this:
 """
@@ -27,7 +31,7 @@ class myagent:
 
         self.rect = Rect(x,y,self.w,self.h)
         self.id = id
-
+        
     def eat(self ):
         agent.diam *= 2
         self.w = int(self.diam)
@@ -61,11 +65,15 @@ class myagent:
 #---------------------------------
 # THE GAME
 
-
+#Start
 pygame.init()
+#Display it on the screen / set the mode
 myscreen = pygame.display.set_mode((400, 300))
+#Set a caption on the window
 pygame.display.set_caption('Simple Animation!')
+#Up = Default
 UP_DN = "UP"
+#Button isnt down
 BUTTON_DOWN = False
 
 red = (255,0,0)   # Color is defined as (Red, Green, Blue)
@@ -74,6 +82,7 @@ radius = 15
 cur_x = 0
 cur_y = 0
 keyPress = ""
+#Force default = OFF
 LED_ON_OFF = "OFF"
 numagents = 0
 agents = []
@@ -118,10 +127,13 @@ while True: # main game loop
                     dist = math.sqrt((agent.x-another_agent.x)**2 + (agent.y-another_agent.y)**2)
 
                     #print (agent.id, another_agent.id, len(agents),dist)
+
+                    #If the distance = 12, eat the other agent and replace it
                     if dist<12:
                         agent.eat()
                         agents.remove(another_agent)
 
+                        #Print text on the screen
                         print ("collision")
 
     pygame.display.flip()
